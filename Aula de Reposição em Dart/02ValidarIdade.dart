@@ -15,10 +15,10 @@ int getAnoAtual(){
 
 void validarIdade(int anoNascimento){
   
-  if(anoNascimento < getAnoAtual()){
+  if(anoNascimento <= getAnoAtual()){
     
     var idade = getAnoAtual() - anoNascimento;    
-    print("Sua idade é: $idade");    
+    print("Sua idade é: $idade anos");    
   }else{
     print("Você veio do futuro? senão, ano inválido!");
   }
