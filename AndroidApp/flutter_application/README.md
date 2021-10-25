@@ -3,4 +3,4 @@
 Um projeto em Flutter com os primeiros exemplos de aplicações da linguagem Dart;
 Testando conhecimentos básicos em aula.
 
-# esse arquivo mudará ao longo do projeto
+# esse arquivo pode mudar ao longo do projeto
