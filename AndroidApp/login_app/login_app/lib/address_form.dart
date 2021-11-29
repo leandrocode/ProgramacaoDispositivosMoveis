@@ -1,20 +1,27 @@
+// ignore_for_file: prefer_const_constructors, unnecessary_new
+
 import 'package:flutter/material.dart';
 
 class AddressForm extends StatefulWidget {
   const AddressForm({Key? key}) : super(key: key);
 
   @override
-  _AddressFormState createState() => _AddressFormState();
+  AddressFormState createState() => AddressFormState();
 }
 
-class _AddressFormState extends State<AddressForm> {
+class AddressFormState extends State<AddressForm> {
+  var cep = TextEditingController();
+  var rua = TextEditingController();
+  var numero = TextEditingController();
+  var bairro = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Text(
-          'Endereço',
+          'Cadastro',
           textDirection: TextDirection.ltr,
         ),
       ),
@@ -27,11 +34,12 @@ class _AddressFormState extends State<AddressForm> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextFormField(
+                controller: cep,
                 autofocus: true,
-                keyboardType: TextInputType.text,
+                keyboardType: TextInputType.number,
                 style: new TextStyle(color: Colors.black87, fontSize: 20),
                 decoration: InputDecoration(
-                  icon: new Icon(Icons.arrow_forward_outlined),
+                  icon: new Icon(Icons.mail_outlined),
                   labelText: 'CEP',
                   hintText: 'Digite seu CEP',
                   hintStyle: TextStyle(color: Colors.black87, fontSize: 15),
@@ -40,6 +48,7 @@ class _AddressFormState extends State<AddressForm> {
               ),
               Divider(),
               TextFormField(
+                controller: rua,
                 autofocus: true,
                 keyboardType: TextInputType.text,
                 style: new TextStyle(color: Colors.black87, fontSize: 20),
@@ -53,8 +62,9 @@ class _AddressFormState extends State<AddressForm> {
               ),
               Divider(),
               TextFormField(
+                controller: numero,
                 autofocus: true,
-                keyboardType: TextInputType.text,
+                keyboardType: TextInputType.number,
                 style: new TextStyle(color: Colors.black87, fontSize: 20),
                 decoration: InputDecoration(
                   icon: new Icon(Icons.arrow_forward_outlined),
@@ -66,11 +76,12 @@ class _AddressFormState extends State<AddressForm> {
               ),
               Divider(),
               TextFormField(
+                controller: bairro,
                 autofocus: true,
                 keyboardType: TextInputType.text,
                 style: new TextStyle(color: Colors.black87, fontSize: 20),
                 decoration: InputDecoration(
-                  icon: new Icon(Icons.home),
+                  icon: new Icon(Icons.home_outlined),
                   labelText: 'Bairro',
                   hintText: 'Digite o nome do Bairro',
                   hintStyle: TextStyle(color: Colors.black87, fontSize: 15),
